@@ -17,6 +17,8 @@ export default function App() {
     } else if (imc >= 24.9 && imc < 34.9) {
       alert('Você está levemente acima do peso!' + imc.toFixed(2));
     }
+    setPeso('');
+    setAltura('');
   }
   return (
     <View style={styles.container}>
@@ -28,6 +30,7 @@ export default function App() {
         onChangeText={(peso) => setPeso(peso)}
         placeholder="Peso(Kg)"
         keyboardType="numeric"
+        color='black'
       />
 
       <TextInput
@@ -36,13 +39,14 @@ export default function App() {
         onChangeText={(altura) => setAltura(altura)}
         placeholder="Altura (cm)"
         keyboardType="numeric"
+        color='black'
       />
       <TouchableOpacity
         style={styles.button}
         onPress={handleSubmit}
       >
 
-        <Text style={styles.buttonText}> Calcular </Text>
+        <Text style={styles.buttonText}> Calcule </Text>
       </TouchableOpacity>
 
     </View>
@@ -51,25 +55,25 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'#D8D8D8'
   },
   title: {
     textAlign: 'center',
-    marginTop: 25,
+    marginBottom:30,
     fontSize: 30,
   },
   input: {
-    backgroundColor: '#121212',
+    backgroundColor: '#FFF',
     borderRadius: 10,
     margin: 15,
     padding: 10,
-    color: '#FFF',
     fontSize: 23,
   },
   button: {
     justifyContent: 'center',
     alignItems: 'center',
     margin: 15,
-    backgroundColor: '#41Aef4',
+    backgroundColor: '#5858FA',
     padding: 10,
   },
 
@@ -78,9 +82,10 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   imagem: {
-    margin:100,
-    width: 200,
-    height: 200,
+    margin:80,
+    width: 250,
+    height: 250,
+    marginVertical:70,
     alignItems: 'center',
   }
 
